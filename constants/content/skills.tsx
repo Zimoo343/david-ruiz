@@ -1,0 +1,15 @@
+export const skills = {
+  jsts: "Javascript / Typescript",
+  react: "React",
+  next: "Next.js",
+  node: "Node.js",
+  gql: "GraphQL",
+  aws: "AWS",
+  sql: "SQL",
+  nosql: "No-SQL",
+  solidity: "Solidity",
+  python: "Python (Django)",
+  framerMotion: "Framer Motion",
+  webGl: "WebGL (3D)",
+  reactNative: "React Native",
+};
