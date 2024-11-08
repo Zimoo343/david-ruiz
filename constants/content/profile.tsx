@@ -1,18 +1,16 @@
 export const profile = {
-  fullName: "Charlie Ruiz",
+  fullName: "David Ruiz",
   jobTitle: "Software Engineer",
   statement: (
     <>
-      I'm a Software Engineer with 10 years of experience specialized in
-      building user-centric products that deliver real value by leveraging a
-      wide range of technologies and skills, including (but not limited to){" "}
-      <b>
-        Javascript/Typescript, React, Next.js, Solidity, SQL/No-SQL, AWS, and
-        more.
-      </b>
+      I'm a Software Engineer with 1 year of experience in web development using
+      technologies such as React, Next.js, CSS, and Tailwind. Familiar with SQL
+      databases and foundational knowledge of Prisma ORM and TRPC. Committed to
+      building efficient and functional user interfaces, always prioritizing
+      optimization and a great user experience in every project.
     </>
   ),
   resumeStatement:
-    "I'm a Software Engineer with 10 years of experience specialized in creating user-centric products that drive real value by harnessing a diverse set of technologies and skills. I'm a strong communicator in both English and Spanish and I alway try to cultivate a strong work culture that translates into exceptional products and a thriving work environment.",
-  location: "Austin, TX",
+    "I'm a Software Engineer with 1 year of experience in web development using technologies such as React, Next.js, CSS, and Tailwind. Familiar with SQL databases and foundational knowledge of Prisma ORM and TRPC. Committed to building efficient and functional user interfaces, always prioritizing optimization and a great user experience in every project.",
+  location: "Querétaro, México",
 };
