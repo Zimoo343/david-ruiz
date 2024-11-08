@@ -1,7 +1,7 @@
 import type { NextSeoProps } from "next-seo";
 
-const BASE_URL = "https://charlieruiz.dev";
-const DEFAULT_TITLE = `Charlie Ruiz 🧑🏻‍💻 | Software Engineer`;
+const BASE_URL = "https://davidruiz.dev";
+const DEFAULT_TITLE = `David Ruiz 🎮 | Software Engineer`;
 const DEFAULT_DESCRIPTION =
   "Software Engineer with 9 years of experience specialized in building user-centric products that deliver real value by leveraging a wide range of technologies and skills, including (but not limited to) Javascript/Typescript, React, Next.js, Solidity, SQL/No-SQL, AWS, and more.";
 
@@ -24,14 +24,14 @@ export const DEFAULT_SEO: NextSeoProps = {
         url: `${BASE_URL}/images/default-share.jpeg`,
         width: 1200,
         height: 640,
-        alt: "Charlie Ruiz",
+        alt: "Davd Ruiz",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
-    handle: "@zimoo354",
-    site: "@zimoo354",
+    handle: "@zimoo343",
+    site: "@zimoo343",
     cardType: "summary_large_image",
   },
 };

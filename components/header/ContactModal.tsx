@@ -4,6 +4,7 @@ import { MouseEventHandler, useEffect, useState } from "react";
 
 export const ContactModal = () => {
   const [open, setOpen] = useState(false);
+  const [alertVisible, setAlertVisible] = useState(false);
 
   const toggle = () => setOpen((prev) => !prev);
 
@@ -34,44 +35,60 @@ export const ContactModal = () => {
     y.set(event.pageY);
   };
 
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("davidruiz7.dev@gmail.com").then(() => {
+      setAlertVisible(true);
+      setTimeout(() => setAlertVisible(false), 2000);
+    });
+  };
+
   return (
-    <div
-      onClick={toggle}
-      onMouseMove={handleMouseMove}
-      className={classNames(
-        "fixed h-screen w-screen top-0 left-0 bg-white/30 dark:bg-black/30 backdrop-blur-md z-10 transition-all duration-500 overflow-hidden origin-bottom cursor-pointer",
-        open ? "scale-1" : "scale-0"
+    <div>
+      {alertVisible && (
+        <div className="fixed top-4 right-4 bg-violet-700 text-white py-2 px-4 rounded shadow-lg z-20">
+          Copied Email
+        </div>
       )}
-      onKeyDown={() => {}}
-    >
-      <motion.span
-        className="fixed font-[100] text-xl text-slate-600 dark:text-slate-400 hidden md:block"
-        style={{
-          x,
-          y,
-        }}
-      >
-        close
-      </motion.span>
       <div
-        onClick={(evt) => evt.stopPropagation()}
+        onClick={toggle}
+        onMouseMove={handleMouseMove}
+        className={classNames(
+          "fixed h-screen w-screen top-0 left-0 bg-white/30 dark:bg-black/30 backdrop-blur-md z-10 transition-all duration-500 overflow-hidden origin-bottom cursor-pointer",
+          open ? "scale-1" : "scale-0"
+        )}
         onKeyDown={() => {}}
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-fit w-[480px] max-w-[95vw] bg-white dark:bg-slate-900 border border-slate-400 rounded-lg py-8 px-4 cursor-default"
       >
-        <button
-          onClick={toggle}
-          className="absolute top-0 right-0 h-12 w-12 text-slate-500 text-xl font-light block"
+        <motion.span
+          className="fixed font-[100] text-xl text-slate-600 dark:text-slate-400 hidden md:block"
+          style={{
+            x,
+            y,
+          }}
         >
-          ×
-        </button>
-        <p className="text-center">
-          Hi there 👋🏻
-          <br />
-          <br />
-          ✉️ Send me an email
-          <br />
-          <b>charlieruiz.dev &lt;at&gt; gmail &lt;dot&gt; com</b>
-        </p>
+          close
+        </motion.span>
+        <div
+          onClick={(evt) => evt.stopPropagation()}
+          onKeyDown={() => {}}
+          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-fit w-[480px] max-w-[95vw] bg-white dark:bg-slate-900 border border-slate-400 rounded-lg py-8 px-4 cursor-default"
+        >
+          <button
+            onClick={toggle}
+            className="absolute top-0 right-0 h-12 w-12 text-slate-500 text-xl font-light block"
+          >
+            ×
+          </button>
+          <p className="text-center">
+            Hi there 👋🏻
+            <br />
+            <br />
+            ✉️ Send me an email
+            <br />
+            <b onClick={handleEmailClick} className="cursor-pointer">
+              davidruiz7.dev@gmail.com
+            </b>
+          </p>
+        </div>
       </div>
     </div>
   );
