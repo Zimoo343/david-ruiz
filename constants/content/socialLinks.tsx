@@ -20,6 +20,13 @@ export const socialLinks: SocialLinkProps[] = [
     url: "https://x.com/zimoo343",
   },
   {
+    image: "/images/social/TlyLogo.webp",
+    title: "Talent ID",
+    subtitle: "https://talently.tech/ly/d-ruiz-lara",
+    url: "https://talently.tech/ly/d-ruiz-lara",
+    hiddenForPrint: true,
+  },
+  {
     image: "/images/social/resume.webp",
     title: "Resume",
     subtitle: "Click Here!",
