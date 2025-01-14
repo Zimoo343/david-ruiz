@@ -35,20 +35,8 @@ export const ContactModal = () => {
     y.set(event.pageY);
   };
 
-  const handleEmailClick = () => {
-    navigator.clipboard.writeText("davidruiz7.dev@gmail.com").then(() => {
-      setAlertVisible(true);
-      setTimeout(() => setAlertVisible(false), 2000);
-    });
-  };
-
   return (
     <div>
-      {alertVisible && (
-        <div className="fixed top-4 right-4 bg-violet-700 text-white py-2 px-4 rounded shadow-lg z-20">
-          Copied Email
-        </div>
-      )}
       <div
         onClick={toggle}
         onMouseMove={handleMouseMove}
@@ -84,9 +72,9 @@ export const ContactModal = () => {
             <br />
             ✉️ Send me an email
             <br />
-            <b onClick={handleEmailClick} className="cursor-pointer">
-              davidruiz7.dev@gmail.com
-            </b>
+            <a href="mailto:davidruiz7.dev@gmail.com" className="contact-email">
+              <b>davidruiz7.dev@gmail.com </b>
+            </a>
           </p>
         </div>
       </div>
