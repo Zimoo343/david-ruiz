@@ -2,6 +2,7 @@ export const skills = {
   jsts: "Javascript / Typescript",
   react: "React",
   tw: "Tailwind CSS",
+  java: "Java",
   reactNative: "React Native",
   next: "Next.js",
   node: "Node.js",
@@ -9,4 +10,6 @@ export const skills = {
   nosql: "No-SQL",
   solidity: "Solidity (Basic)",
   python: "Python",
+  vite: "Vite",
+  figma: "Figma",
 };
