@@ -1,5 +1,6 @@
 import { classNames } from "@/utils/strings";
 import { SkillTag } from "./SkillTag";
+import { useRef } from "react";
 
 export type PortfolioItemProps = {
   title: string;
@@ -21,6 +22,16 @@ export const PortfolioItem = ({
   link,
   rtl,
 }: PortfolioItemProps) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    videoRef.current?.play();
+  };
+
+  const handleMouseLeave = () => {
+    videoRef.current?.pause();
+  };
+
   return (
     <div
       className={classNames(
@@ -30,13 +41,15 @@ export const PortfolioItem = ({
     >
       <div className="flex justify-center w-full lg:w-1/2">
         <video
-          autoPlay
+          ref={videoRef}
           loop
           muted
           playsInline
           poster={imageUrl}
           src={videoUrl}
           className="rounded-lg shadow-xl border border-slate-200 dark:border-none"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         />
       </div>
       <div className="flex flex-col gap-8 w-full lg:w-1/2">
@@ -59,8 +72,7 @@ export const PortfolioItem = ({
               // underline decoration
               `after:contents-[''] after:transition-all after:w-10 after:h-0 after:block after:border 
               after:border-slate-500 after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2
-              hover:after:w-[150%] hover:after:h-[150%] hover:after:-bottom-[25%]
-            `
+              hover:after:w-[150%] hover:after:h-[150%] hover:after:-bottom-[25%]`
             )}
           >
             Visit site

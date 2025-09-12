@@ -12,6 +12,15 @@ export const portfolioItems: PortfolioItemProps[] = [
     stack: [sk.jsts, sk.react, sk.next, sk.solidity, sk.tw],
   },
   {
+    title: "AltSocietyAI - SearchPromptly",
+    videoUrl: "/videos/AltSocietyAI.mp4",
+    imageUrl: "/videos/AltSocietyAI.webp",
+    description:
+      "Working mainly on UI/UX and Frontend Development using React and Tailwind CSS.",
+    link: "https://altsociety.ai",
+    stack: [sk.react, sk.jsts, sk.tw],
+  },
+  {
     title: "Ztek Admin Panel",
     videoUrl: "/videos/ztekadminpanel.mp4",
     imageUrl: "/videos/ztekadminpanel.webp",
