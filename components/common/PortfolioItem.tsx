@@ -40,17 +40,20 @@ export const PortfolioItem = ({
       )}
     >
       <div className="flex justify-center w-full lg:w-1/2">
-        <video
-          ref={videoRef}
-          loop
-          muted
-          playsInline
-          poster={imageUrl}
-          src={videoUrl}
-          className="rounded-lg shadow-xl border border-slate-200 dark:border-none"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        />
+        <div className="relative w-full max-w-xl aspect-video">
+          <video
+            ref={videoRef}
+            loop
+            muted
+            playsInline
+            poster={imageUrl}
+            src={videoUrl}
+            className="rounded-lg shadow-xl border border-slate-200 dark:border-none w-full h-full object-cover absolute top-0 left-0"
+            preload="metadata"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
+        </div>
       </div>
       <div className="flex flex-col gap-8 w-full lg:w-1/2">
         <h2 className="text-3xl font-semibold text-slate-800 dark:text-slate-100">
