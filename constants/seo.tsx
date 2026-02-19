@@ -1,9 +1,9 @@
 import type { NextSeoProps } from "next-seo";
+import { aboutMeStatement } from "./content/profile";
 
 const BASE_URL = "https://davidruiz.dev";
 const DEFAULT_TITLE = `David Ruiz 🎮 | Software Engineer`;
-const DEFAULT_DESCRIPTION =
-  "I'm a Software Engineer with 2 years of experience in web development, using technologies such as React, Next.js, CSS, and Tailwind. Skilled in working with SQL databases and experienced with modern tools like Prisma ORM and TRPC. I’m passionate about creating efficient, functional, and visually appealing user interfaces, with a strong focus on optimization and delivering an exceptional user experience in every project.";
+const DEFAULT_DESCRIPTION = aboutMeStatement;
 /**
  * Default SEO settings. These are the fallbacks if a `NextSeo` component is not
  * found on the page. For all options, @see https://github.com/garmeeh/next-seo
