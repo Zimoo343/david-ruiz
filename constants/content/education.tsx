@@ -6,6 +6,6 @@ export const education: JobExperienceProps = {
   companyName: "Universidad Autonoma de Queretaro",
   startDate: "Aug 2020",
   endDate: "Dec 2024",
-  location: "",
+  location: "Querétaro, México",
   children: "",
 };

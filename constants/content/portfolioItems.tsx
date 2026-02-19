@@ -28,4 +28,13 @@ export const portfolioItems: PortfolioItemProps[] = [
       "Worked on the invoice form, autosend feature, and the dashboard as well as the UI for the platform.",
     stack: [sk.jsts, sk.react, sk.tw],
   },
+  {
+    title: "Ztek.dev",
+    videoUrl: "/videos/ztekdev.mp4",
+    imageUrl: "/videos/ztekdev.webp",
+    description:
+      "Worked on the landing page and blog page of the website for Ztek Interactive, LLC, a portfolio for the team, and a contact form, which is built using mainly React and Tailwind CSS.",
+    link: "https://ztek.dev/",
+    stack: [sk.react, sk.jsts, sk.tw, sk.wp],
+  },
 ];

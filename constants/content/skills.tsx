@@ -12,4 +12,5 @@ export const skills = {
   python: "Python",
   vite: "Vite",
   figma: "Figma",
+  wp: "Wordpress",
 };
