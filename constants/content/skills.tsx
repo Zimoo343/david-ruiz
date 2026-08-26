@@ -13,4 +13,5 @@ export const skills = {
   vite: "Vite",
   figma: "Figma",
   wp: "Wordpress",
+  css: "CSS",
 };

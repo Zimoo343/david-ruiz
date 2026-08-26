@@ -37,4 +37,24 @@ export const portfolioItems: PortfolioItemProps[] = [
     link: "https://ztek.dev/",
     stack: [sk.react, sk.jsts, sk.tw, sk.wp],
   },
+  {
+    title: "Elsupermarkets & Fiestamart",
+    description:
+      "Handled routine WordPress maintenance, minor feature updates, and accessibility adjustments for El Supermarkets and Fiestamart.",
+    media: [
+      {
+        videoUrl: "/videos/elsuper.mp4",
+        imageUrl: "/videos/elsuper.webp",
+        label: "El Supermarkets",
+        link: "https://elsupermarkets.com/",
+      },
+      {
+        videoUrl: "/videos/fiestamarket.mp4",
+        imageUrl: "/videos/fiestamart.webp",
+        label: "Fiestamart",
+        link: "https://fiestamart.com/",
+      },
+    ],
+    stack: [sk.wp, sk.jsts, sk.css],
+  },
 ];
