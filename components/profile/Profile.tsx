@@ -1,6 +1,5 @@
 import { CONTENT } from "@/constants/content";
 import { classNames } from "@/utils/strings";
-import Image from "next/image";
 
 const { fullName, jobTitle } = CONTENT;
 
@@ -16,11 +15,11 @@ export const Profile = ({ homepage = false }: ProfileProps) => (
     )}
   >
     {homepage && (
-      <Image
+      <img
         src="/images/profile.webp"
         alt={fullName}
-        height={256}
-        width={256}
+        loading="eager"
+        decoding="async"
         className={classNames(
           "rounded-full shadow-md",
           homepage ? "w-56 mb-8" : "w-40 mb-4 lg:block hidden"

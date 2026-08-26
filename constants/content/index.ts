@@ -5,6 +5,7 @@ import { education } from "./education";
 import { portfolioItems } from "./portfolioItems";
 import { socialLinks } from "./socialLinks";
 import { skills } from "./skills";
+import { certificates } from "./certificates";
 
 const CONTENT = {
   ...profile,
@@ -13,6 +14,7 @@ const CONTENT = {
   portfolioItems,
   socialLinks,
   skills,
+  certificates,
 };
 
 export { LINKS, CONTENT };

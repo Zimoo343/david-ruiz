@@ -3,10 +3,11 @@ const aboutMeStatement =
 
 export const profile = {
   fullName: "David Ruiz",
+  lastName: "Lara",
   jobTitle: "Software Engineer",
   statement: <>{aboutMeStatement}</>,
   resumeStatement: aboutMeStatement,
-  location: "Querétaro, México",
+  location: "Los Reyes de Salgado, Michoacán. México",
 };
 
 export { aboutMeStatement };
