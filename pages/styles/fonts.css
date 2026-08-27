@@ -20,7 +20,8 @@ dd {
   font-family: Inter, sans-serif;
 }
 
-.social-link:hover img {
+.social-link:hover img,
+.social-link[open] img {
   filter: saturate(1) opacity(1);
 }
 

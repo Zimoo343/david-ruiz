@@ -2,6 +2,7 @@ export const skills = {
   jsts: "Javascript / Typescript",
   react: "React",
   tw: "Tailwind CSS",
+  css: "CSS",
   java: "Java",
   reactNative: "React Native",
   next: "Next.js",
@@ -13,5 +14,4 @@ export const skills = {
   vite: "Vite",
   figma: "Figma",
   wp: "Wordpress",
-  css: "CSS",
 };

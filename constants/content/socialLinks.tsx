@@ -2,6 +2,14 @@ import { SocialLinkProps } from "@/components/common/SocialLink";
 
 export const socialLinks: SocialLinkProps[] = [
   {
+    image: "/images/social/resume.webp",
+    title: "Resume",
+    subtitle: "Download CV",
+    url: "/api/resume-pdf",
+    confirmDownload: true,
+    hiddenForPrint: true,
+  },
+  {
     image: "/images/social/linkedin.webp",
     title: "LinkedIn",
     subtitle: "linkedin.com/in/zimoo343",
@@ -24,13 +32,6 @@ export const socialLinks: SocialLinkProps[] = [
     title: "Talent ID",
     subtitle: "https://talently.tech/ly/d-ruiz-lara",
     url: "https://talently.tech/ly/d-ruiz-lara",
-    hiddenForPrint: true,
-  },
-  {
-    image: "/images/social/resume.webp",
-    title: "Resume",
-    subtitle: "Click Here!",
-    url: "/pdf/DAVID_RUIZ_LARA_CV_EN.pdf",
     hiddenForPrint: true,
   },
 ];
