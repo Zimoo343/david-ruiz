@@ -4,6 +4,11 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/resume-pdf": ["./node_modules/pdfkit/js/data/**"],
+    },
+  },
 };
 
 module.exports = nextConfig;
