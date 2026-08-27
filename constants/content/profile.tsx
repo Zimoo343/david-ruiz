@@ -3,7 +3,7 @@ const aboutMeStatement =
 
 export const profile = {
   fullName: "David Ruiz",
-  lastName: "Lara",
+  lastName: "Lara", /* Last name just for CV Generation */
   jobTitle: "Software Engineer",
   statement: <>{aboutMeStatement}</>,
   resumeStatement: aboutMeStatement,
