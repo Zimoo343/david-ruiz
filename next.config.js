@@ -6,7 +6,10 @@ const nextConfig = {
   },
   experimental: {
     outputFileTracingIncludes: {
-      "/api/resume-pdf": ["./node_modules/pdfkit/js/data/**"],
+      "/api/resume-pdf": [
+        "./node_modules/pdfkit/js/data/**",
+        "./node_modules/pdfkit/js/standard-fonts/**",
+      ],
     },
   },
 };
