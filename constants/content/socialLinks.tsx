@@ -6,6 +6,7 @@ export const socialLinks: SocialLinkProps[] = [
     title: "Resume",
     subtitle: "Download CV",
     url: "/api/resume-pdf",
+    confirmDownload: true,
     hiddenForPrint: true,
   },
   {

@@ -104,6 +104,7 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse) {
       .text(`${job.startDate} - ${job.endDate} | ${job.location}`)
       .fillColor("black");
     if (job.children) {
+      doc.moveDown(0.4);
       doc.fontSize(10.5).text(String(job.children), { lineGap: 2 });
     }
     doc.moveDown(0.6);
