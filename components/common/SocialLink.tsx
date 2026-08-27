@@ -1,17 +1,12 @@
 import { classNames } from "@/utils/strings";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
-
-type SocialLinkOption = {
-  label: string;
-  url: string;
-};
 
 export type SocialLinkProps = {
   image: string;
   title: string;
   subtitle?: string;
   url: string;
-  downloadOptions?: SocialLinkOption[];
   confirmDownload?: boolean;
   hiddenForPrint?: boolean;
 };
@@ -21,7 +16,6 @@ export const SocialLink = ({
   title,
   url,
   subtitle,
-  downloadOptions,
   confirmDownload,
   hiddenForPrint,
 }: SocialLinkProps) => {
@@ -55,10 +49,13 @@ export const SocialLink = ({
     };
   }, []);
 
-  const hasDownloadOptions = Boolean(downloadOptions?.length);
-  const showConfirmDownload = confirmDownload && !hasDownloadOptions;
+  const closeDetails = () => {
+    if (detailsRef.current) {
+      detailsRef.current.open = false;
+    }
+  };
 
-  if (hasDownloadOptions || showConfirmDownload) {
+  if (confirmDownload) {
     return (
       <details
         ref={detailsRef}
@@ -69,19 +66,15 @@ export const SocialLink = ({
       >
         <summary
           className="list-none cursor-pointer mb-4 rounded-lg px-2 py-1 lg:hover:translate-x-2 transition-all [&::-webkit-details-marker]:hidden"
-          aria-label={
-            hasDownloadOptions
-              ? `Open ${title} language options`
-              : `Open ${title} download confirmation`
-          }
+          aria-label={`Open ${title} download confirmation`}
         >
           <div className="flex gap-4 items-center justify-between">
             <div className="flex gap-4 items-center min-w-0">
-              <img
+              <Image
                 src={image}
                 alt={title}
-                loading="lazy"
-                decoding="async"
+                height={256}
+                width={256}
                 className="rounded-md shadow-md w-10 print:w-8 shrink-0"
               />
               <div className="flex flex-col gap-1 text-slate-700 dark:text-slate-200 min-w-0">
@@ -110,57 +103,29 @@ export const SocialLink = ({
         </summary>
 
         <div className="absolute left-0 right-auto top-full z-20 -mt-1 w-[80vw] max-w-sm rounded-xl border border-slate-300/80 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-2xl overflow-hidden lg:right-0 lg:w-full lg:max-w-none">
-          {hasDownloadOptions &&
-            downloadOptions!.map((option) => (
+          <div className="flex flex-col gap-3 p-4">
+            <p className="text-sm text-slate-600 dark:text-slate-300">
+              Download {title} as PDF?
+            </p>
+            <div className="flex gap-2">
               <a
-                key={option.label}
-                href={option.url}
+                href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => {
-                  if (detailsRef.current) {
-                    detailsRef.current.open = false;
-                  }
-                }}
-                className="flex h-12 items-center px-4 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700/70 transition-colors"
+                onClick={closeDetails}
+                className="flex-1 rounded-md bg-slate-800 dark:bg-slate-200 py-2 text-center text-sm font-medium text-white dark:text-slate-900 hover:opacity-90 transition-opacity"
               >
-                {option.label}
+                Download
               </a>
-            ))}
-
-          {showConfirmDownload && (
-            <div className="flex flex-col gap-3 p-4">
-              <p className="text-sm text-slate-600 dark:text-slate-300">
-                Download {title} as PDF?
-              </p>
-              <div className="flex gap-2">
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    if (detailsRef.current) {
-                      detailsRef.current.open = false;
-                    }
-                  }}
-                  className="flex-1 rounded-md bg-slate-800 dark:bg-slate-200 py-2 text-center text-sm font-medium text-white dark:text-slate-900 hover:opacity-90 transition-opacity"
-                >
-                  Download
-                </a>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (detailsRef.current) {
-                      detailsRef.current.open = false;
-                    }
-                  }}
-                  className="flex-1 rounded-md border border-slate-300 dark:border-slate-600 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700/70 transition-colors"
-                >
-                  Cancel
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={closeDetails}
+                className="flex-1 rounded-md border border-slate-300 dark:border-slate-600 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700/70 transition-colors"
+              >
+                Cancel
+              </button>
             </div>
-          )}
+          </div>
         </div>
       </details>
     );
@@ -177,11 +142,11 @@ export const SocialLink = ({
       )}
     >
       <div className="flex gap-4 items-center mb-4 lg:hover:translate-x-2 transition-all">
-        <img
+        <Image
           src={image}
           alt={title}
-          loading="lazy"
-          decoding="async"
+          height={256}
+          width={256}
           className="rounded-md shadow-md w-10 print:w-8"
         />
         <div className="flex flex-col gap-1 text-slate-700 dark:text-slate-200">

@@ -93,26 +93,37 @@ export const PortfolioItem = ({
 
           {normalizedMedia.length > 1 && (
             <div className="mt-3 grid grid-cols-2 gap-2">
-              {normalizedMedia.map((item, idx) => (
-                <button
-                  key={`${item.imageUrl}-${idx}`}
-                  type="button"
-                  aria-label={`Show media ${idx + 1}`}
-                  className={classNames(
-                    "relative aspect-video overflow-hidden rounded-md border transition-all",
-                    idx === activeMediaIndex
-                      ? "border-slate-700 dark:border-slate-200"
-                      : "border-slate-300 dark:border-slate-700 opacity-80 hover:opacity-100"
-                  )}
-                  onClick={() => setActiveMediaIndex(idx)}
-                >
-                  <img
-                    src={item.imageUrl}
-                    alt={`${title} preview ${idx + 1}`}
-                    className="h-full w-full object-cover"
-                  />
-                </button>
-              ))}
+              {normalizedMedia.map((item, idx) => {
+                const isActive = idx === activeMediaIndex;
+
+                return (
+                  <button
+                    key={`${item.imageUrl}-${idx}`}
+                    type="button"
+                    aria-label={`Show media ${idx + 1}${
+                      item.label ? `: ${item.label}` : ""
+                    }`}
+                    className={classNames(
+                      "relative aspect-video overflow-hidden rounded-md border transition-all",
+                      isActive
+                        ? "border-slate-700 dark:border-slate-200"
+                        : "border-slate-300 dark:border-slate-700 opacity-50 hover:opacity-90"
+                    )}
+                    onClick={() => setActiveMediaIndex(idx)}
+                  >
+                    <img
+                      src={item.imageUrl}
+                      alt={`${title} preview ${idx + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                    {isActive && item.label && (
+                      <span className="absolute bottom-0 left-0 right-0 bg-slate-900/70 py-1 text-center text-[11px] tracking-wider text-white">
+                        {item.label}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>

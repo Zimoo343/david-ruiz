@@ -14,7 +14,7 @@ export const PastExperience = () => (
     <ContentBlock title="Education">
       <JobExperience {...education} />
       {certificates.length > 0 && (
-        <div className="mt-6 pl-0 lg:pl-24 print:pl-0">
+        <div className="mt-6 pl-24 print:pl-0">
           <h5 className="text-lg font-semibold mb-3">Certificates</h5>
           <ul className="flex flex-col gap-2">
             {certificates.map((certificate) => (

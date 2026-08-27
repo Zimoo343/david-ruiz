@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PropsWithChildren } from "react";
 
 export type JobExperienceProps = PropsWithChildren & {
@@ -20,11 +21,11 @@ export const JobExperience = ({
 }: JobExperienceProps) => (
   <div className="job-experience flex flex-col gap-4 mb-8">
     <div className="flex gap-4 items-center">
-      <img
+      <Image
         src={image}
         alt={companyName}
-        loading="lazy"
-        decoding="async"
+        height={256}
+        width={256}
         className="rounded-2xl shadow-md w-20 print:w-12 print:rounded-md"
       />
       <div className="flex flex-col gap-1">
