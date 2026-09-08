@@ -7,9 +7,12 @@ export const HeaderMenu = () => {
 
   return (
     <div className="flex items-center">
-      <ul className="flex gap-2 lg:gap-4 mr-0 lg:mr-2">
+      <ul className="flex items-center gap-1 sm:gap-2 lg:gap-4 mr-0 lg:mr-2">
         {ui.nav.map(({ url, label, contact }) => (
-          <li key={url} className="uppercase font-light text-sm lg:text-md">
+          <li
+            key={url}
+            className="uppercase font-light text-[11px] sm:text-sm lg:text-md"
+          >
             <Link
               href={url}
               className={classNames(

@@ -48,7 +48,7 @@ export const LanguageSelector = () => {
 
   return (
     <details ref={detailsRef} className="language-selector group relative">
-      <summary className="list-none cursor-pointer flex items-center gap-2 px-3 py-1.5 rounded-lg uppercase font-light text-sm lg:text-md [&::-webkit-details-marker]:hidden">
+      <summary className="list-none cursor-pointer flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg uppercase font-light text-[11px] sm:text-sm lg:text-md [&::-webkit-details-marker]:hidden">
         {locale}
         <svg
           viewBox="0 0 20 20"
