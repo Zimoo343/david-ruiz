@@ -4,9 +4,9 @@ export const socialLinks: SocialLinkProps[] = [
   {
     image: "/images/social/resume.webp",
     title: "Resume",
-    subtitle: "Download CV",
-    url: "/api/resume-pdf",
-    confirmDownload: true,
+    subtitle: "Save as PDF",
+    url: "/resume",
+    printOnClick: true,
     hiddenForPrint: true,
   },
   {
