@@ -45,7 +45,6 @@ jspm_packages
 .env.staging
 
 # Claude Code tooling
-.claude/launch.json
 
 # TypeScript incremental build cache
 *.tsbuildinfo

@@ -1,4 +1,5 @@
-import { DEFAULT_SEO } from "@/constants/seo";
+import { buildSeo } from "@/constants/seo";
+import { useContent, useLanguage } from "@/lib/i18n/LanguageProvider";
 import { classNames } from "@/utils/strings";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
@@ -10,9 +11,12 @@ type PageWrapperProps = PropsWithChildren & {
 };
 
 export const PageWrapper = ({ children, className }: PageWrapperProps) => {
+  const { seo } = useContent();
+  const { locale } = useLanguage();
+
   return (
     <>
-      <DefaultSeo {...DEFAULT_SEO} />
+      <DefaultSeo {...buildSeo(seo, locale)} />
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
