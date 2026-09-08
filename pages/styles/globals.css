@@ -25,6 +25,11 @@ body {
   background: rgb(var(--background-rgb));
 }
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 @import "./noise-overlay.css";
 @import "./fonts.css";
 @import "./print.css";

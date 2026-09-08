@@ -12,7 +12,7 @@ export const Header = () => {
           src="/images/logo.webp"
           width={164}
           height={68}
-          className="w-16 sm:w-24 dark:invert dark:brightness-0"
+          className="w-16 dark:invert dark:brightness-0"
         />
       </Link>
       <div className="flex items-center gap-1 sm:gap-4 lg:gap-6">
