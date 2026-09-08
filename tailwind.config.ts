@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { PRODUCTION } from "./lib/env";
 
 const config: Config = {
   content: [
