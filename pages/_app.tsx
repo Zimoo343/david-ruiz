@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,36 +14,38 @@ const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div key={router.pathname}>
-        <NoiseOverlay />
-        <Header />
-        <motion.main
-          className="block m-auto max-w-7xl"
-          {...pageTransitions.fadeOutIn}
-        >
-          <Component {...pageProps} />
-        </motion.main>
-      </motion.div>
-      {/* Google Analytics */}
-      {GOOGLE_ANALYTICS_ID && (
-        <>
-          <Script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-          ></Script>
-          <Script>
-            {`
+    <LanguageProvider>
+      <AnimatePresence mode="wait">
+        <motion.div key={router.pathname}>
+          <NoiseOverlay />
+          <Header />
+          <motion.main
+            className="block m-auto max-w-7xl"
+            {...pageTransitions.fadeOutIn}
+          >
+            <Component {...pageProps} />
+          </motion.main>
+        </motion.div>
+        {/* Google Analytics */}
+        {GOOGLE_ANALYTICS_ID && (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+            ></Script>
+            <Script>
+              {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', '${GOOGLE_ANALYTICS_ID}');
             `}
-          </Script>
-        </>
-      )}
-    </AnimatePresence>
+            </Script>
+          </>
+        )}
+      </AnimatePresence>
+    </LanguageProvider>
   );
 };
 

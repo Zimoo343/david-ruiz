@@ -1,4 +1,5 @@
 import { HeaderMenu } from "./HeaderMenu";
+import { LanguageSelector } from "./LanguageSelector";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +15,10 @@ export const Header = () => {
           className="w-24 dark:invert dark:brightness-0"
         />
       </Link>
-      <HeaderMenu />
+      <div className="flex items-center gap-4 lg:gap-6">
+        <HeaderMenu />
+        <LanguageSelector />
+      </div>
     </header>
   );
 };

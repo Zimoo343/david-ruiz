@@ -1,3 +1,4 @@
+import { useContent } from "@/lib/i18n/LanguageProvider";
 import { classNames } from "@/utils/strings";
 import { SkillTag } from "./SkillTag";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -31,6 +32,7 @@ export const PortfolioItem = ({
   link,
   rtl,
 }: PortfolioItemProps) => {
+  const { ui } = useContent();
   const normalizedMedia = useMemo<PortfolioMedia[]>(() => {
     if (media?.length) {
       return media;
@@ -53,9 +55,7 @@ export const PortfolioItem = ({
   const activeMedia =
     normalizedMedia[activeMediaIndex] || normalizedMedia[0] || null;
   const activeLink = activeMedia?.link || link;
-  const activeLinkLabel = activeMedia?.label
-    ? `Visit ${activeMedia.label}`
-    : "Visit site";
+  const activeLinkLabel = activeMedia?.label ? activeMedia.label : ui.visitSite;
 
   const handleMouseEnter = () => {
     videoRef.current?.play();
@@ -69,7 +69,7 @@ export const PortfolioItem = ({
     <div
       className={classNames(
         "flex w-full justify-evenly items-center flex-col gap-16 mb-24",
-        !rtl ? "lg:flex-row" : "lg:flex-row-reverse"
+        !rtl ? "lg:flex-row" : "lg:flex-row-reverse",
       )}
     >
       <div className="flex justify-center w-full lg:w-1/2">
@@ -107,7 +107,7 @@ export const PortfolioItem = ({
                       "relative aspect-video overflow-hidden rounded-md border transition-all",
                       isActive
                         ? "border-slate-700 dark:border-slate-200"
-                        : "border-slate-300 dark:border-slate-700 opacity-50 hover:opacity-90"
+                        : "border-slate-300 dark:border-slate-700 opacity-50 hover:opacity-90",
                     )}
                     onClick={() => setActiveMediaIndex(idx)}
                   >
@@ -149,7 +149,7 @@ export const PortfolioItem = ({
               // underline decoration
               `after:contents-[''] after:transition-all after:w-10 after:h-0 after:block after:border 
               after:border-slate-500 after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2
-              hover:after:w-[150%] hover:after:h-[150%] hover:after:-bottom-[25%]`
+              hover:after:w-[150%] hover:after:h-[150%] hover:after:-bottom-[25%]`,
             )}
           >
             {activeLinkLabel}
