@@ -2,9 +2,9 @@ import { Locale } from "@/constants/content";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { useEffect, useRef } from "react";
 
-const OPTIONS: { value: Locale; label: string }[] = [
-  { value: "en", label: "EN" },
-  { value: "es", label: "ES" },
+const OPTIONS: { value: Locale; full: string }[] = [
+  { value: "en", full: "English" },
+  { value: "es", full: "Español" },
 ];
 
 export const LanguageSelector = () => {
@@ -67,18 +67,18 @@ export const LanguageSelector = () => {
         </svg>
       </summary>
       <div className="absolute right-0 top-full z-20 mt-2 w-28 overflow-hidden rounded-lg border border-slate-300/80 dark:border-slate-600 bg-white dark:bg-slate-800 shadow-2xl">
-        {OPTIONS.map(({ value, label }) => (
+        {OPTIONS.map(({ value, full }) => (
           <button
             key={value}
             type="button"
             onClick={() => selectLocale(value)}
-            className={`block w-full px-4 py-2 text-left text-sm uppercase transition-colors ${
+            className={`block w-full px-4 py-2 text-left text-sm capitalize transition-colors ${
               value === locale
                 ? "bg-slate-800 text-white dark:bg-slate-200 dark:text-slate-900"
                 : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700/70"
             }`}
           >
-            {label}
+            {full}
           </button>
         ))}
       </div>
