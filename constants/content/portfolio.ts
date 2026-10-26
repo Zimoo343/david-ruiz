@@ -37,7 +37,6 @@ export const portfolioContent: { en: PortfolioSlice; es: PortfolioSlice } = {
       },
       {
         title: "Ztek.dev",
-        videoUrl: "/videos/ztekdev.mp4",
         imageUrl: "/videos/ztekdev.webp",
         description:
           "Worked on the landing page and blog page of the website for Ztek Interactive, LLC, a portfolio for the team, and a contact form, which is built using mainly React and Tailwind CSS.",
@@ -107,7 +106,6 @@ export const portfolioContent: { en: PortfolioSlice; es: PortfolioSlice } = {
       },
       {
         title: "Ztek.dev",
-        videoUrl: "/videos/ztekdev.mp4",
         imageUrl: "/videos/ztekdev.webp",
         description:
           "Trabajé en la página de inicio y la de blog del sitio de Ztek Interactive, LLC, un portafolio para el equipo y un formulario de contacto, construido principalmente con React y Tailwind CSS.",

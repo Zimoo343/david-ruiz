@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 type PortfolioMedia = {
   imageUrl: string;
-  videoUrl: string;
+  videoUrl?: string;
   label?: string;
   link?: string;
 };
@@ -38,7 +38,7 @@ export const PortfolioItem = ({
       return media;
     }
 
-    if (imageUrl && videoUrl) {
+    if (imageUrl) {
       return [{ imageUrl, videoUrl }];
     }
 
@@ -76,18 +76,26 @@ export const PortfolioItem = ({
         <div className="w-full max-w-xl">
           {activeMedia && (
             <div className="relative w-full aspect-video">
-              <video
-                ref={videoRef}
-                loop
-                muted
-                playsInline
-                poster={activeMedia.imageUrl}
-                src={activeMedia.videoUrl}
-                className="rounded-lg shadow-xl border border-slate-200 dark:border-none w-full h-full object-cover absolute top-0 left-0"
-                preload="metadata"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              />
+              {activeMedia.videoUrl ? (
+                <video
+                  ref={videoRef}
+                  loop
+                  muted
+                  playsInline
+                  poster={activeMedia.imageUrl}
+                  src={activeMedia.videoUrl}
+                  className="rounded-lg shadow-xl border border-slate-200 dark:border-none w-full h-full object-cover absolute top-0 left-0"
+                  preload="metadata"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+              ) : (
+                <img
+                  src={activeMedia.imageUrl}
+                  alt={`${title} preview`}
+                  className="rounded-lg shadow-xl border border-slate-200 dark:border-none w-full h-full object-cover absolute top-0 left-0"
+                />
+              )}
             </div>
           )}
 
